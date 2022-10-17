@@ -1,9 +1,9 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Task {
+public class Task extends Person {
     public static void main(String[] args) {
-    addPeople();
+        addPeople();
     }
 
     public static void addPeople() {
@@ -17,25 +17,25 @@ public class Task {
             people.add(name);
         }
         System.out.println("Do you want to change List?");
-        System.out.println("1 - change item" +"\n"+ "2 - delete item" +"\n"+ "3 - find item");
+        System.out.println("1 - change item" + "\n" + "2 - delete item" + "\n" + "3 - find item");
         int answer = sc.nextInt();
-        if(answer == 1){
+        if (answer == 1) {
             System.out.println("Enter number of element to change:");
             int num = sc.nextInt();
             System.out.println("Enter new name:");
             String name = sc.next();
-            people.set(num,name);
-        } else if(answer == 2){
+            people.set(num, name);
+        } else if (answer == 2) {
             System.out.println("Enter number of element to delete:");
             int num = sc.nextInt();
             people.remove(num);
-            System.out.println(num +"- was deleted");
-        } else if(answer ==3){
+            System.out.println(num + "- was deleted");
+        } else if (answer == 3) {
             System.out.println("Enter name of the person to find:");
             String name = sc.next();
-            if(people.contains(name)){
+            if (people.contains(name)) {
 
-                System.out.println("ArrayList contains - "+name);
+                System.out.println("ArrayList contains - " + name);
             }
         }
         Object[] peopleArray = people.toArray();
@@ -43,6 +43,7 @@ public class Task {
             System.out.println(person);
         }
     }
-
-
+    public void display(){
+        super.display();
+    }
 }
